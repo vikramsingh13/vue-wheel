@@ -1,12 +1,15 @@
 <script setup>
 import { ref, watchEffect, watch } from 'vue';
-const { entries, divWidth } = defineProps({
+const { entries, divWidth, data} = defineProps({
   entries: {
     type: Number,
     required: true
   },
   divWidth: {
     type: String,
+  },
+  data: {
+    type: Object,
   }
 });
 
@@ -48,7 +51,7 @@ const handleSpin = () => {
                     'transform-origin': 'bottom',
                 }"
             >
-                {{ entry }}
+                {{ data[entry] }}
             </div>
         </div>
     </div>
