@@ -1,1 +1,58 @@
-@import './base.css';
+@import "./base.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+    .spin {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        background-color: #e2e2e2;
+        text-transform: uppercase;
+        border: 8px solid #fff;
+        font-weight: bold;
+        font-size: 20px;
+        color: #a2a2a2;
+        width: 80px;
+        height: 80px;
+        font-family: sans-serif;
+        border-radius: 50%;
+        cursor: pointer;
+        outline: none;
+        letter-spacing: 1px;
+    }
+
+    .arrow{
+        position: absolute;
+        top:0;
+        left:50%;
+        transform: translateX(-50%);
+        color:#fff;
+    }
+
+    .arrow::before{
+        content:"\1F817";
+	    font-size:50px;
+    }
+
+    
+}
+
+
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
